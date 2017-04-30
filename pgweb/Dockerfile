@@ -2,10 +2,10 @@ FROM alpine
 MAINTAINER Jason Clark <jason@jasonclark.io>
 
 RUN apk update && \
-    apk add -y ca-certificates wget unzip && \
+    apk add ca-certificates wget unzip && \
     mkdir -p /tmp/pgweb && \
     cd /tmp/pgweb && \
-    wget https://github.com/sosedoff/pgweb/releases/download/v0.9.4/pgweb_linux_amd64.zip && \
+    wget https://github.com/sosedoff/pgweb/releases/download/v0.9.6/pgweb_linux_amd64.zip && \
     unzip pgweb_linux_amd64.zip -d /bin && \
     rm -rf /tmp/pgweb && \
     apk del wget unzip
