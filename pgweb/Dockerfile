@@ -5,7 +5,7 @@ RUN apk update && \
     apk add ca-certificates wget unzip && \
     mkdir -p /tmp/pgweb && \
     cd /tmp/pgweb && \
-    wget https://github.com/sosedoff/pgweb/releases/download/v0.9.6/pgweb_linux_amd64.zip && \
+    wget https://github.com/sosedoff/pgweb/releases/download/v0.9.7/pgweb_linux_amd64.zip && \
     unzip pgweb_linux_amd64.zip -d /bin && \
     rm -rf /tmp/pgweb && \
     apk del wget unzip
