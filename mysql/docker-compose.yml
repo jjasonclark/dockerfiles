@@ -1,0 +1,19 @@
+version: '3'
+volumes:
+  sql_data:
+
+services:
+  mysql:
+    image: mysql:5.7
+    command:
+      - --sql-mode=STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION,NO_AUTO_CREATE_USER
+      - --lower-case-table-names=2
+    ports:
+      - '3306:3306'
+    volumes:
+      - sql_data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test_password
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
