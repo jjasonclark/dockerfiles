@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# docker run --name=smokeping_data \
+  # -v /etc/smokeping \
+  # -v /var/lib/smokeping \
+  # busybox:latest \
+  # echo smokeping_data
+
+docker run --name='smokeping' -d \
+  -p 8000:80 \
+  --volumes-from=smokeping_data \
+  -v /var/run/docker.sock:/run/docker.sock \
+  -v $(which docker):/bin/docker \
+  dperson/smokeping

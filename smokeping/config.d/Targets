@@ -1,0 +1,98 @@
+*** Targets ***
+
+probe = FPing
+
+menu = Top
+title = Network Latency Grapher
+remark = SmokePing website; here you will learn all about the latency of our network.
+
++ Local
+menu = Local
+title = Local Network
+#parents = owner:/Test/James location:/
+
+++ HomeServices
+menu = HomeServices
+host = 10.210.98.2
+
+++ MinMac
+menu = MinMac
+host = 10.210.98.20
+
+++ Gateway
+menu = Gateway Router
+host = 10.210.98.1
+
+++ Jason5
+menu = Jason5 Router
+host = 10.210.98.5
+
+++ Jason4
+menu = Jason4 Router
+host = 10.210.98.4
+
+++ Desktop
+menu = Desktop
+host = 10.210.98.24
+
++ Internet
+menu = Internet
+title = Internet Sites
+
+++ Google
+menu = Google
+host = google.com
+
+++ Bing
+menu = Bing
+host = bing.com
+
+++ Github
+menu = Github
+host = github.com
+
+++ Reddit
+menu = Reddit
+host = www.reddit.com
+
+++ YouTube
+menu = YouTube
+host = www.youtube.com
+
+++ Netflix
+menu = Netflix
+host = www.netflix.com
+
+++ Amazon
+menu = Amazon
+host = amazon.com
+
+++ Par8o
+menu = Par8o
+host = www.par8o.com
+
++ DNS
+menu = DNS
+title = DNS Servers
+
+++ Google1
+probe = DNS
+menu = Google Main DNS
+host = 8.8.8.8
+server = 8.8.8.8
+lookup = google.com
+
+++ Google2
+probe = DNS
+menu = Google Secondary DNS
+host = 8.8.4.4
+server = 8.8.4.4
+lookup = google.com
+
+++ HomeServices
+probe = DNS
+menu = HomeServices DNS
+host = 10.210.98.2
+server = 10.210.98.2
+lookup = google.com
+
