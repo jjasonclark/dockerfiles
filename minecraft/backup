@@ -1,0 +1,6 @@
+#!/bin/bash
+
+TIMESTAMP=$(date +%Y-%m-%d)
+BACKUPFILE=minecraft-backup-$TIMESTAMP.tar.gz
+echo "Backing up to $BACKUPFILE"
+docker run --rm -t -v minecraft_data:/data -v $PWD:/backup alpine:latest tar czvf /backup/$BACKUPFILE /data
