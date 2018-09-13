@@ -1,0 +1,10 @@
+version: '3'
+services:
+  reverse-proxy:
+    image: traefik
+    command: --api --docker
+    ports:
+      - "10100:80"
+      - "10101:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
