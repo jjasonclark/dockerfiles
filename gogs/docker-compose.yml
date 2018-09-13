@@ -1,6 +1,8 @@
-version: '2.0'
+version: "2.0"
+
 volumes:
-  data:
+  data: {}
+
 services:
   gogs:
     image: gogs/gogs:latest
