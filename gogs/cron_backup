@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DEST=//powerman/public
+FOLDER=backups
+TIMESTAMP=$(date +%Y-%m-%d)
+BACKUPFILE=gogs-backup-$TIMESTAMP.tar.gz
+
+echo "Backing up to $BACKUPFILE"
+docker run --rm -v `pwd`:/backup -v gogs_data:/data alpine:latest tar czvf /backup/$BACKUPFILE /data
+docker run --rm -v `pwd`:/backup -w /backup vistalba/nextcloud smbclient $DEST -D $FOLDER -N -U " "%" " -c "put $BACKUPFILE"
+

@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 TIMESTAMP=$(date +%Y-%m-%d)
-docker run --rm -t -v gogs_data:/data -v $PWD:/backup ubuntu:trusty tar czvf /backup/gogs-backup-$TIMESTAMP.tar.gz /data
-smbclient //powerman/public -N -U anonymous -c 'put gogs-backup-$TIMESTAMP.tar.gz'
+BACKUPFILE=gogs-backup-$TIMESTAMP.tar.gz
+echo "Backing up to $BACKUPFILE"
+docker run --rm -t -v gogs_data:/data -v $PWD:/backup alpine:latest tar czvf /backup/$BACKUPFILE /data
+smbclient //powerman/public -D backups -N -U anonymous -c 'put $BACKUPFILE'
