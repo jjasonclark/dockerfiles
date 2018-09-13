@@ -1,4 +1,8 @@
-version: '2.0'
+version: "2.0"
+
+volumes:
+  data: {}
+
 services:
   minecraft:
     image: itzg/minecraft-server
@@ -18,5 +22,3 @@ services:
       MODE: creative
       LEVEL: clark_world
       JVM_OPTS: -Xmx1024M
-volumes:
-  data:
